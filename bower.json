@@ -1,0 +1,25 @@
+{
+  "name": "credit-card-example",
+  "authors": [
+    "Hasan Aydoğdu <hsnaydd@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "keywords": [
+    "credit card",
+    "example",
+    "rivetsjs"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "rivets": "^0.9.6"
+  }
+}

@@ -1,0 +1,84 @@
+/*!
+ * Credit Card Example
+ * Version 1.0.0 (02-03-2017 14:54)
+ * Licensed under MIT
+ * Copyright 2013-2017 Hasan Aydoğdu <hsnaydd@gmail.com>
+ */
+
+.c-credit-card {
+  -webkit-perspective: 1000;
+          perspective: 1000;
+  display: inline-block; }
+  .c-credit-card__card {
+    position: relative;
+    width: 336px;
+    height: 196px;
+    display: block;
+    transition: -webkit-transform .6s;
+    transition: transform .6s;
+    transition: transform .6s, -webkit-transform .6s;
+    -webkit-transform-style: preserve-3d;
+            transform-style: preserve-3d;
+    color: #fff;
+    box-shadow: 0 5px 10px 0 rgba(44, 47, 50, 0.15); }
+    .c-credit-card__card.is-backface {
+      -webkit-transform: rotateY(180deg);
+              transform: rotateY(180deg); }
+  .c-credit-card__face {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+    border-radius: 6px;
+    background-color: #767d85;
+    background-image: linear-gradient(135deg, #afb4bb 0%, #767d85 100%); }
+    .c-credit-card__face--front {
+      z-index: 2;
+      -webkit-transform: rotateX(0deg);
+              transform: rotateX(0deg); }
+    .c-credit-card__face--back {
+      z-index: 1;
+      -webkit-transform: rotateY(180deg);
+              transform: rotateY(180deg); }
+  .c-credit-card__prop {
+    position: absolute;
+    font-weight: 500; }
+  .c-credit-card__name {
+    bottom: 30px;
+    left: 30px; }
+  .c-credit-card__expire {
+    bottom: 30px;
+    right: 30px; }
+  .c-credit-card__number {
+    left: 30px;
+    bottom: 70px;
+    font-size: 18px; }
+  .c-credit-card__ccv {
+    left: 250px;
+    top: 80px;
+    line-height: 32px; }
+  .c-credit-card__chip {
+    display: block;
+    width: 42px;
+    height: 32px;
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 4px;
+    top: 50px;
+    left: 30px; }
+  .c-credit-card__band {
+    display: block;
+    background-color: #444;
+    height: 40px;
+    width: 100%;
+    left: 0;
+    top: 20px; }
+  .c-credit-card__ccv-band {
+    width: 230px;
+    height: 32px;
+    background-color: #fff;
+    display: block;
+    left: 10px;
+    top: 80px; }

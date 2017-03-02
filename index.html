@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Credit Card Example</title>
+  <link rel="stylesheet" type="text/css" href="./vendors/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="./dist/css/main.css">
+  <script src="./vendors/rivets.bundled.min.js" type="text/javascript"></script>
+  <script src="./dist/js/main.js" type="text/javascript"></script>
+</head>
+<body>
+  <div class="container pt-5" id="rivets-credit-card-container">
+    <h1>Credit Card Example</h1>
+    <div class="row py-5">
+      <div class="col-md-6">
+        <form>
+          <div class="row">
+            <div class="col-sm">
+              <div class="form-group">
+                <label for="formExmName">Full Name</label>
+                <input type="text" class="form-control" id="formExmName" rv-value="creditCard.name">
+              </div>
+            </div>
+            <div class="col-sm">
+              <label for="formExmCardNo">Card Number</label>
+              <input type="text" class="form-control" id="formExmCardNo" rv-on-input="masks.creditCard" data-max-char="16">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm">
+              <label for="formExpMonth">Month</label>
+              <select class="form-control" id="formExpMonth" rv-value="creditCard.expireMonth">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+              </select>
+            </div>
+            <div class="col-sm">
+              <label for="formExpYear">Year</label>
+              <select class="form-control" id="formExpYear" rv-value="creditCard.expireYear">
+                <option>2017</option>
+                <option>2018</option>
+                <option>2019</option>
+                <option>2020</option>
+                <option>2021</option>
+              </select>
+            </div>
+            <div class="col-sm">
+              <label for="formExpCcv">CCV</label>
+              <input type="text" class="form-control" id="formExpCcv" rv-on-focus="handlers.turnCard" rv-on-blur="handlers.turnCard" rv-on-input="masks.number" data-max-char="3">
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="col-md-6 text-center">
+        <div class="c-credit-card">
+          <div class="c-credit-card__card" rv-class-is-backface="creditCard.isBackface">
+            <div class="c-credit-card__face c-credit-card__face--front">
+              <span class="c-credit-card__prop c-credit-card__name">{ creditCard.name | defaultText 'Hasan Aydoğdu' }</span>
+              <span class="c-credit-card__prop c-credit-card__expire">
+                { creditCard.expireMonth | defaultText '3' }
+                /
+                { creditCard.expireYear | defaultText '2017' }
+              </span>
+              <span class="c-credit-card__prop c-credit-card__number">{ creditCard.number | defaultText '*** *** *** ***' }</span>
+              <span class="c-credit-card__prop c-credit-card__chip"></span>
+            </div>
+            <div class="c-credit-card__face c-credit-card__face--back">
+              <span class="c-credit-card__prop c-credit-card__ccv js-credit-card-ccv">{ creditCard.ccv | defaultText '123' }</span>
+              <span class="c-credit-card__prop c-credit-card__band"></span>
+              <span class="c-credit-card__prop c-credit-card__ccv-band"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
