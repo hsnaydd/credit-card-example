@@ -1,4 +1,4 @@
 # Credit Card Example
-A credit card example made using Revetjs. It has data binding and animation.
+This is an example of credit card made by using Rivets Js. It has data binding and animation.
 
 [Example](https://hsnaydd.github.io/credit-card-example/)
