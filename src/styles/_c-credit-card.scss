@@ -62,6 +62,9 @@
   &__name {
     bottom: 30px;
     left: 30px;
+    text-align: left;
+    line-height: 1.2;
+    max-width: 200px;
   }
 
   &__expire {
